@@ -6,14 +6,14 @@
 # meme代币+swap
 ## 单元测试
     forge test --match-test test_MetaSwapTest -vv
-    单元测试中进行了weth部署、MyMeMe代币部署、PoolManager部署、PositionManager部署、SwapRouter部署
-    eth与weth 1:1 兑换
-    创建交易对 MyMeMe(token0) <-> weth(token1)
-    添加流动性
-    交易1: weth(tokenIn) <-> MyMeMe(tokenOut)，提供weth数量计算MyMeMe数量，提供MyMeMe数量计算weth数量
-    交易2: MyMeMe(tokenIn) <-> weth(tokenOut)，提供MyMeMe数量计算weth数量，提供weth数量计算MyMeMe数量
-    移除流动性
-    收回代币
+    1. 单元测试中进行了weth部署、MyMeMe代币部署、PoolManager部署、PositionManager部署、SwapRouter部署
+    2. eth与weth 1:1 兑换
+    3. 创建交易对 MyMeMe(token0) <-> weth(token1)
+    4. 添加流动性
+    5. 交易1: weth(tokenIn) <-> MyMeMe(tokenOut)，提供weth数量计算MyMeMe数量，提供MyMeMe数量计算weth数量
+    6. 交易2: MyMeMe(tokenIn) <-> weth(tokenOut)，提供MyMeMe数量计算weth数量，提供weth数量计算MyMeMe数量
+    7. 移除流动性
+    8. 收回代币
 ## 部署MyMeMe.sol, 合约地址0xE918e4104b28dE3c081e1B02890ba938422dc5b2
     forge script script/MyMeMe.s.sol:MyMeMeScript --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast --verify -vvvv
 ## 部署PoolManager.sol, 合约地址0xbE55ABB99Da16dF6b5B0789f6AFB0Fb204903957
@@ -25,14 +25,14 @@
 # MyToken stake
 ## 单元测试
     forge test --match-test test_MetaNodeStakeTest -vv
-    单元测试中进行了MyToken部署、MetaNodeToken部署、MetaNodeStake部署
-    MyToken铸造、转账
-    创建eth质押池子和MyToken质押池子
-    质押eth和MyToken
-    查看挖矿收益
-    解质押
-    收回代笔
-    查询挖矿收益MetaNode
+    1. 单元测试中进行了MyToken部署、MetaNodeToken部署、MetaNodeStake部署
+    2. MyToken铸造、转账
+    3. 创建eth质押池子和MyToken质押池子
+    4. 质押eth和MyToken
+    5. 查看挖矿收益
+    6. 解质押
+    7. 收回代笔
+    8. 查询挖矿收益MetaNode
 ## 部署MyToken.sol, 合约地址0x39190e9962ef5418ACA9DBEeDb1D3304566A9eD3
     forge script script/MyToken.s.sol:MyTokenScript --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY --broadcast --verify -vvvv
 ## 部署MetaNodeToken, 合约地址0xc8F09446541471881477629d2dB0AbdC2C1F05Ea
