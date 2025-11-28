@@ -2,5 +2,24 @@
 src = "src"
 out = "out"
 libs = ["lib"]
-
+optimizer = true       # 启用优化器
+# optimizer_runs = 200   # 优化次数（默认 200，可适当增加）
+via_ir = true          # 启用 IR 优化
+solc_version = "0.8.25"
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+[lint]
+exclude_lints = [
+    "asm-keccak256", # 不检查hash编码gas消耗问题
+    "mixed-case-function", # 不检查函数名称驼峰命名问题
+    "mixed-case-variable", # 不检查变量名称驼峰命名问题
+    "unsafe-typecast", # 不检查类型转换安全问题
+    "screaming-snake-case-immutable", # 不检查不可变变量命名问题
+    "divide-before-multiply", # 不检查除法精度丢失问题
+    "unused-import", # 不检查无用导入
+    ]
+
+[dependencies]
+forge-std = "https://github.com/foundry-rs/forge-std@v1.11.0"
+openzeppelin-contracts = "https://github.com/OpenZeppelin/openzeppelin-contracts@v5.4.0"
+openzeppelin-contracts-upgradeable = "https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable@v5.4.0"
+openzeppelin-foundry-upgrades = "https://github.com/OpenZeppelin/openzeppelin-foundry-upgrades@v0.4.0"
